@@ -16,4 +16,4 @@ def almost_gcd
   ans
 end
 
-puts almost_gcd
+puts almost_gcd if $0 == __FILE__
