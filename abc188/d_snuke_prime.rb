@@ -31,4 +31,4 @@ def snuke_prime
   cost
 end
 
-puts snuke_prime
+puts snuke_prime if $0 == __FILE__
