@@ -15,7 +15,7 @@ def alcoholic
     end
   end
 
-  p ans
+  ans
 end
 
-puts alcoholic
+puts alcoholic if $0 == __FILE__
