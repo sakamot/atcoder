@@ -1,0 +1,21 @@
+version: 2.1
+orbs:
+  browser-tools: circleci/browser-tools@1.2.3
+jobs:
+  build:
+    docker:
+      - image: cimg/ruby:3.0-browsers
+        environment:
+          RAILS_ENV: test
+    steps:
+      - checkout
+      - browser-tools/install-browser-tools
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - run:
+          name: Run Tests
+          command: bundle exec rspec
+      - store_artifacts:
+          path: coverage
+
